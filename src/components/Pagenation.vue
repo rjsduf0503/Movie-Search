@@ -1,7 +1,12 @@
 <template>
-	<div>Pagenation.vue</div>
+	<div>{{ currentPage + '/' + totalPage }}</div>
 </template>
 
 <script>
-	export default {};
+	export default {
+		props: {
+			currentPage: String,
+			totalPage: String,
+		},
+	};
 </script>

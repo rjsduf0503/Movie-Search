@@ -3,3 +3,4 @@ dist/
 .vscode/
 .idea/
 .DS_Store
+src/utils/api_key.js

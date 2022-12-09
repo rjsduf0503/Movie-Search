@@ -1,8 +1,10 @@
 import { createStore } from 'vuex';
-import message from './message';
+import keyword from './keyword';
+import movies from './movies';
 
 export default createStore({
 	modules: {
-		message,
+		keyword,
+		movies,
 	},
 });
