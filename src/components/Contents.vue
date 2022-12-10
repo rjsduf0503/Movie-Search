@@ -30,3 +30,9 @@
 		},
 	};
 </script>
+
+<style lang="scss" scoped>
+	main {
+		width: 100%;
+	}
+</style>

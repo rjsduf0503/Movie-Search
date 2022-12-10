@@ -23,8 +23,10 @@
 
 <style lang="scss" scoped>
 	.cards-container {
+		padding: 4rem 10% 4rem 10%;
 		display: grid;
-		grid-gap: 1rem;
+		grid-row-gap: 2rem;
+		grid-column-gap: 2rem;
 		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 	}
 </style>
