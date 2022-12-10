@@ -61,7 +61,7 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			background-color: rgba($color: #2f2f2f, $alpha: 0.5);
+			background-color: rgba($color: #2f2f2f, $alpha: 0.7);
 		}
 	}
 </style>

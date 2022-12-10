@@ -25,6 +25,8 @@
 
 <style lang="scss" scoped>
 	div {
+		background-image: url('./assets/images/space.png');
+		background-size: cover;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
