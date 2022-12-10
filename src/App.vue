@@ -35,6 +35,6 @@
 	}
 
 	.searched {
-		justify-content: flex-start;
+		justify-content: space-between;
 	}
 </style>

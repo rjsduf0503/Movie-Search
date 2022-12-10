@@ -53,7 +53,6 @@
 		width: 100%;
 		height: 4rem;
 		margin-top: 2rem;
-		align-items: center;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -62,7 +61,7 @@
 
 	.input-container {
 		width: 40%;
-		min-width: 240px;
+		min-width: 19rem;
 		height: 3rem;
 		position: relative;
 		transition: all 300ms ease-out;
@@ -75,7 +74,7 @@
 
 		input {
 			width: calc(100% - 1rem);
-			min-width: 220px;
+			min-width: 15rem;
 			height: 3rem;
 			font-size: 1.4rem;
 			font-weight: bold;
@@ -100,6 +99,7 @@
 			background-color: rgb(53, 53, 53);
 			height: 3rem;
 			width: 5rem;
+			min-width: 3rem;
 			border-radius: 0 5rem 5rem 0;
 		}
 	}
