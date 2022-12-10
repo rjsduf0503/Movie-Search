@@ -1,7 +1,7 @@
 <template>
-	<div class="app-container">
+	<div :class="`${searched ? 'searched' : ''}`">
 		<Header />
-		<Contents />
+		<Contents v-if="searched" />
 	</div>
 	<!-- <RouterView /> -->
 </template>
@@ -15,16 +15,26 @@
 			Header,
 			Contents,
 		},
+		computed: {
+			searched() {
+				return this.$store.state.movies.searched;
+			},
+		},
 	};
 </script>
 
-<style lang="scss">
-	.app-container {
+<style lang="scss" scoped>
+	div {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: flex-start;
+		justify-content: center;
 
 		height: 100%;
+		min-height: 100vh;
+	}
+
+	.searched {
+		justify-content: flex-start;
 	}
 </style>
