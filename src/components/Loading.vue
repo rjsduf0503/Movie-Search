@@ -1,6 +1,6 @@
 <template>
 	<div class="loading">
-		<div class="loading__inner">
+		<div>
 			<RingLoader color="#FFFFFF" size="100%" />
 		</div>
 	</div>
@@ -19,7 +19,7 @@
 		justify-content: center;
 		align-items: center;
 
-		&__inner {
+		div {
 			width: 20rem;
 			height: 20rem;
 
