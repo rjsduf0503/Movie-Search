@@ -1,5 +1,4 @@
-import { API_END_POINT } from '../utils/constants';
-import { API_KEY } from '../utils/api_key';
+import { request } from '../utils/api';
 
 export default {
 	namespaced: true,
@@ -36,9 +35,7 @@ export default {
 
 			commit('updateLoading', true);
 
-			const response = await fetch(
-				`${API_END_POINT}?apikey=${API_KEY}&i=${imdbID}&plot=${plot}`,
-			).then((res) => res.json());
+			const response = await request({ i: imdbID, plot });
 
 			if (response.Response === 'True') {
 				commit('updateMovie', response);

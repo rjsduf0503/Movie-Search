@@ -1,5 +1,4 @@
-import { API_END_POINT } from '../utils/constants';
-import { API_KEY } from '../utils/api_key';
+import { request } from '../utils/api';
 
 export default {
 	namespaced: true,
@@ -40,9 +39,7 @@ export default {
 				Search: searchedMovies,
 				totalResults,
 				Response: searched,
-			} = await fetch(
-				`${API_END_POINT}?apikey=${API_KEY}&s=${title}&page=${currentPage}`,
-			).then((res) => res.json());
+			} = await request({ s: title, page: currentPage });
 
 			if (searched === 'True') {
 				commit('updateMovies', {
