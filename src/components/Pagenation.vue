@@ -25,7 +25,6 @@
 				return this.$store.getters['keyword/trimmedTitle'];
 			},
 			currentPage() {
-				// return this.$store.getters['movies/currentPage'];
 				return this.$store.state.movies.currentPage;
 			},
 			totalPage() {
@@ -34,7 +33,6 @@
 		},
 		methods: {
 			onClick(nextPage) {
-				console.log(nextPage);
 				const { totalPage, currentPage, fetchMovies } = this;
 
 				if (nextPage < 1 || nextPage > totalPage || nextPage === currentPage)

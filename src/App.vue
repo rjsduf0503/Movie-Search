@@ -1,7 +1,9 @@
 <template>
-	<div :class="`${searched ? 'searched' : ''}`">
+	<div :class="`app-container ${searched ? 'searched' : ''}`">
 		<Header />
-		<Contents v-if="searched" />
+		<Loading v-if="isMoviesLoading || isMovieLoading" />
+		<!-- <Loading v-if="isMovieLoading" /> -->
+		<Contents v-if="searched && !isMoviesLoading" />
 	</div>
 </template>
 
@@ -19,12 +21,18 @@
 			searched() {
 				return this.$store.state.movies.searched;
 			},
+			isMoviesLoading() {
+				return this.$store.state.movies.isLoading;
+			},
+			isMovieLoading() {
+				return this.$store.state.movie.isLoading;
+			},
 		},
 	};
 </script>
 
 <style lang="scss" scoped>
-	div {
+	.app-container {
 		background-image: url('./assets/images/space.png');
 		background-size: cover;
 		display: flex;

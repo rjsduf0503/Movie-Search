@@ -7,6 +7,7 @@ export default {
 		return {
 			searched: false,
 			detail: {},
+			isLoading: false,
 		};
 	},
 	getters: {
@@ -25,10 +26,15 @@ export default {
 			state.searched = searched;
 			state.detail = payload;
 		},
+		updateLoading(state, payload) {
+			state.isLoading = payload;
+		},
 	},
 	actions: {
 		async fetchMovie({ commit }, payload) {
 			const { imdbID, plot = 'short' } = payload;
+
+			commit('updateLoading', true);
 
 			const response = await fetch(
 				`${API_END_POINT}?apikey=${API_KEY}&i=${imdbID}&plot=${plot}`,
@@ -37,6 +43,8 @@ export default {
 			if (response.Response === 'True') {
 				commit('updateMovie', response);
 			}
+
+			commit('updateLoading', false);
 		},
 	},
 };

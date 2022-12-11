@@ -9,6 +9,7 @@ export default {
 			totalResults: '',
 			searched: false,
 			currentPage: undefined,
+			isLoading: false,
 		};
 	},
 	getters: {
@@ -25,10 +26,15 @@ export default {
 			state.searched = JSON.parse(searched.toLowerCase());
 			state.currentPage = parseInt(currentPage);
 		},
+		updateLoading(state, payload) {
+			state.isLoading = payload;
+		},
 	},
 	actions: {
 		async fetchMovies({ commit }, payload) {
 			const { title, currentPage = 1 } = payload;
+
+			commit('updateLoading', true);
 
 			const {
 				Search: searchedMovies,
@@ -46,6 +52,8 @@ export default {
 					currentPage,
 				});
 			}
+
+			commit('updateLoading', false);
 		},
 	},
 };

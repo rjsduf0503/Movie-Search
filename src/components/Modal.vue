@@ -1,6 +1,6 @@
 <template>
 	<teleport to="body">
-		<template v-if="modalVisible">
+		<template v-if="modalVisible && !isMovieLoading">
 			<div class="modal" @click="offModal">
 				<div class="modal__inner" @click.stop>
 					<slot></slot>
@@ -31,12 +31,17 @@
 		methods: {
 			offModal() {
 				this.$emit('update:modalVisible', false);
-        this.$store.commit('movie/updateMovie', {});
+				this.$store.commit('movie/updateMovie', {});
 			},
 			keyupHandler() {
 				if (event.key === 'Escape') {
 					this.offModal();
 				}
+			},
+		},
+		computed: {
+			isMovieLoading() {
+				return this.$store.state.movie.isLoading;
 			},
 		},
 	};
