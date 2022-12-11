@@ -19,6 +19,9 @@
 	import Movie from './Movie.vue';
 
 	export default {
+		components: {
+			Movie,
+		},
 		props: {
 			movie: Object,
 		},
@@ -26,9 +29,6 @@
 			return {
 				modalVisible: false,
 			};
-		},
-		components: {
-			Movie,
 		},
 		watch: {
 			modalVisible(newValue) {

@@ -1,8 +1,14 @@
 import '@/styles/normalize.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import {
+	faSearch,
+	faAngleRight,
+	faAngleLeft,
+	faAnglesRight,
+	faAnglesLeft,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-library.add(faSearch);
+library.add([faSearch, faAngleRight, faAngleLeft, faAnglesRight, faAnglesLeft]);
 
 import { createApp } from 'vue';
 import App from '@/App';

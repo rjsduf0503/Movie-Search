@@ -5,7 +5,11 @@ export default {
 			title: '',
 		};
 	},
-	getters: {},
+	getters: {
+    trimmedTitle(state) {
+      return state.title.trim();
+    }
+  },
 	mutations: {
 		updateTitle(state, payload) {
 			const { title } = payload;

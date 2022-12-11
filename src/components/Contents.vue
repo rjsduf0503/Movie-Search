@@ -1,7 +1,7 @@
 <template>
-	<main><Movies :movies="movies" :searched="searched" /></main>
+	<main><Movies :searched="searched" /></main>
 	<nav v-if="searched">
-		<Pagenation :currentPage="currentPage" :totalPage="totalPage" />
+		<Pagenation />
 	</nav>
 </template>
 
@@ -15,17 +15,8 @@
 			Pagenation,
 		},
 		computed: {
-			movies() {
-				return this.$store.state.movies.searchedMovies;
-			},
 			searched() {
 				return this.$store.state.movies.searched;
-			},
-			currentPage() {
-				return this.$store.state.movies.currentPage;
-			},
-			totalPage() {
-				return this.$store.getters['movies/totalPage'];
 			},
 		},
 	};

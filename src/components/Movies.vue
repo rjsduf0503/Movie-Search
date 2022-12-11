@@ -14,9 +14,13 @@
 		components: {
 			Card,
 		},
-		props: {
-			movies: Array,
-			searched: Boolean,
+		computed: {
+			movies() {
+				return this.$store.state.movies.searchedMovies;
+			},
+			searched() {
+				return this.$store.state.movies.searched;
+			},
 		},
 	};
 </script>

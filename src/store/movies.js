@@ -8,12 +8,12 @@ export default {
 			searchedMovies: [],
 			totalResults: '',
 			searched: false,
-			currentPage: '',
+			currentPage: undefined,
 		};
 	},
 	getters: {
 		totalPage(state) {
-			return Math.ceil(parseInt(state.totalResults) / 10).toString();
+			return Math.ceil(parseInt(state.totalResults) / 10);
 		},
 	},
 	mutations: {
@@ -23,12 +23,12 @@ export default {
 			state.searchedMovies = searchedMovies;
 			state.totalResults = totalResults;
 			state.searched = JSON.parse(searched.toLowerCase());
-			state.currentPage = currentPage;
+			state.currentPage = parseInt(currentPage);
 		},
 	},
 	actions: {
 		async fetchMovies({ commit }, payload) {
-			const { title, currentPage = '1' } = payload;
+			const { title, currentPage = 1 } = payload;
 
 			const {
 				Search: searchedMovies,
