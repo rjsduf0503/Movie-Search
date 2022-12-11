@@ -1,8 +1,8 @@
 import { API_END_POINT } from './constants.js';
-// import { API_KEY } from './api_key.js';
-const API_KEY = '7035c60c';
 
 export const request = async (query = {}) => {
+  const API_KEY = '7035c60c';
+
 	try {
 		let queryString = '';
 		Object.entries(query).forEach((q) => (queryString += `&${q[0]}=${q[1]}`));
