@@ -1,5 +1,6 @@
 import { API_END_POINT } from './constants.js';
-import { API_KEY } from './api_key.js';
+// import { API_KEY } from './api_key.js';
+const API_KEY = '7035c60c';
 
 export const request = async (query = {}) => {
 	try {
