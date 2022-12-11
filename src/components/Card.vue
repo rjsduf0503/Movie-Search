@@ -91,6 +91,7 @@
 
 		&-back,
 		&-front {
+			border: 2px solid rgba($color: #2f2f2f, $alpha: 0.7);
 			border-radius: 2rem;
 			width: 100%;
 			height: 100%;

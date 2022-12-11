@@ -2,7 +2,6 @@
 	<div :class="`app-container ${searched ? 'searched' : ''}`">
 		<Header />
 		<Loading v-if="isMoviesLoading || isMovieLoading" />
-		<!-- <Loading v-if="isMovieLoading" /> -->
 		<Contents v-if="searched && !isMoviesLoading" />
 	</div>
 </template>
