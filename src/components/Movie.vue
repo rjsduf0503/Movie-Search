@@ -33,10 +33,12 @@
 	.movie-wrapper {
 		display: grid;
 		grid-template-columns: 20rem 20rem;
-		max-height: 30rem;
+		height: 30rem;
 
 		img {
-			max-height: 30rem;
+			height: 30rem;
+			max-width: 20rem;
+
 			border-radius: 3rem 0 0 3rem;
 			aspect-ratio: 119/176;
 		}
@@ -61,6 +63,7 @@
 
 				img {
 					width: 100%;
+
 					aspect-ratio: 119/176;
 					border-radius: 3rem;
 				}
