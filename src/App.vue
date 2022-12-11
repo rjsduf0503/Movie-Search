@@ -3,7 +3,6 @@
 		<Header />
 		<Contents v-if="searched" />
 	</div>
-	<!-- <RouterView /> -->
 </template>
 
 <script>
@@ -15,6 +14,7 @@
 			Header,
 			Contents,
 		},
+
 		computed: {
 			searched() {
 				return this.$store.state.movies.searched;

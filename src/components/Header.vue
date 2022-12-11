@@ -30,9 +30,9 @@
 			onSubmit(e) {
 				e.preventDefault();
 				this.$refs.input.blur();
-				this.searchMovie();
+				this.fetchMovies();
 			},
-			searchMovie() {
+			fetchMovies() {
 				const title = this.$store.state.keyword.title.trim();
 
 				if (title.length === 0) {

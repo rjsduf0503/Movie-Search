@@ -1,21 +1,66 @@
 <template>
-	<div class="flip">
+	<div class="flip" @click="onClick">
 		<div class="card">
 			<div class="card-front">
 				<img :src="movie.Poster" :alt="movie.Title" />
 			</div>
 			<div class="card-back">
-				<div>{{ movie.Title }}</div>
-				<div>Released: {{ movie.Year }}</div>
+				<h2>{{ movie.Title }}</h2>
+				<div>Released | {{ movie.Year }}</div>
 			</div>
 		</div>
 	</div>
+	<Modal v-model:modalVisible="modalVisible">
+		<Movie />
+	</Modal>
 </template>
 
 <script>
+	import Movie from './Movie.vue';
+
 	export default {
 		props: {
 			movie: Object,
+		},
+		data() {
+			return {
+				modalVisible: false,
+			};
+		},
+		components: {
+			Movie,
+		},
+		watch: {
+			modalVisible(newValue) {
+				if (newValue) {
+					document.querySelector('body').style.overflow = 'hidden';
+				} else {
+					document.querySelector('body').style.overflow = '';
+				}
+			},
+		},
+		methods: {
+			onClick() {
+				this.modalVisible = true;
+				this.fetchMovie();
+			},
+			fetchMovie() {
+				const { imdbID } = this.$props.movie;
+
+				if (imdbID) {
+					this.$store.dispatch('movie/fetchMovie', {
+						imdbID,
+					});
+				}
+			},
+		},
+		computed: {
+			movieDetail() {
+				return this.$store.state.movie.detail;
+			},
+			fineDisplayPoster() {
+				return this.$store.getters['movie/fineDisplayPoster'];
+			},
 		},
 	};
 </script>

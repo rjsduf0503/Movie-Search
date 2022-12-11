@@ -38,7 +38,7 @@ export default {
 				`${API_END_POINT}?apikey=${API_KEY}&s=${title}&page=${currentPage}`,
 			).then((res) => res.json());
 
-			if (searched) {
+			if (searched === 'True') {
 				commit('updateMovies', {
 					searchedMovies,
 					totalResults,
