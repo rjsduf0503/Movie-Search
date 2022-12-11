@@ -2,6 +2,7 @@
 	<header>
 		<form class="input-container" @submit="onSubmit">
 			<input
+				class="input-title"
 				ref="input"
 				v-model="title"
 				type="text"

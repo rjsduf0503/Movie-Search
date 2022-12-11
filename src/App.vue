@@ -3,6 +3,7 @@
 		<Header />
 		<Loading v-if="isMoviesLoading || isMovieLoading" />
 		<Contents v-if="searched && !isMoviesLoading" />
+		<FAB />
 	</div>
 </template>
 
@@ -15,7 +16,6 @@
 			Header,
 			Contents,
 		},
-
 		computed: {
 			searched() {
 				return this.$store.state.movies.searched;

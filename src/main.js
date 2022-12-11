@@ -6,9 +6,17 @@ import {
 	faAngleLeft,
 	faAnglesRight,
 	faAnglesLeft,
+	faArrowUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-library.add([faSearch, faAngleRight, faAngleLeft, faAnglesRight, faAnglesLeft]);
+library.add([
+	faSearch,
+	faAngleRight,
+	faAngleLeft,
+	faAnglesRight,
+	faAnglesLeft,
+	faArrowUp,
+]);
 
 import RingLoader from 'vue-spinner/src/RingLoader';
 
@@ -18,12 +26,14 @@ import store from '@/store';
 import router from '@/routes';
 import Modal from '@/components/Modal';
 import Loading from '@/components/Loading';
+import FAB from '@/components/FAB';
 
 const app = createApp(App);
 app.component('FontAwesomeIcon', FontAwesomeIcon);
 app.component('RingLoader', RingLoader);
 app.component('Modal', Modal);
 app.component('Loading', Loading);
+app.component('FAB', FAB);
 app.use(store);
 app.use(router);
 app.mount('#app');
